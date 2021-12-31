@@ -17,6 +17,7 @@
 `git add file_name` : 파일을 git 관리를 위해 추가
 - 초기의 git 버전관리 할당 시에도 사용하고 파일이 수정된 후 버전을 새로 commit하기 전에도 add를 통해 할당시켜줘야 함
 - add를 통해 stage에 commit 대기상태인 파일들이 있고 commit으로 버전 할당해주면 repository 에 올라가게 된다.
+- `git add -u` 수정되거나 삭제 등 update된 파일 모두 add
 
 `git config --global user.name 이름`: 버전 이름을 설정해준다  
 `git config --global user.email 이메일` : 버전 메일을 설정해준다
