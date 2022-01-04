@@ -1,0 +1,66 @@
+# 파이썬입문과 크롤링기초 부트캠프
+## 크롤링 코드 패턴으로 익히기
+`import requests from bs4 import BeautifulSoup`  
+`res = requests. get('https'://v.media.daum.net/v/~~)`  
+`soup = BeautifulSoup(res.content, 'html.parser')`  
+`mydata = soup.find('h3')`
+`mydata.get_text()`
+### 필요 라이브러리 호출
+* requests : 웹페이지 가져오기 라이브러리
+* bs4(BeautifulSoup) : 웹페이지 분석(크롤링) 라이브러리
+> `import requests from bs4 import BeautifulSoup` 
+
+### 웹 페이지 가져오기
+* `requests.get(URL)` : 크롤링 할 페이지 url주소의 내용 가져오기
+> `res = requests. get('https'://v.media.daum.net/v/~~)`
+> > `res.content` : res의 내용을 보여준다
+
+### 웹페이지 파싱
+* 파싱이란 : 문자열의 이미 분석
+> `soup = BeautifulSoup(res.content, 'html.parser')`  
+> html.parser울 아용한 클래스
+
+### 필요한 데이터 추출하기
+`mydata = soup.find('h3')` : 원하는 소스코드 앞 부분을 넣으면 그 줄이 나온다.(필요한 데이터 추출하는 코드 넣는 곳)  
+`mydata.get_text()`  
+
+---
+
+## 웹 구조와 HTML 이해
+### HTML
+* 마크업 언어(xml 등)
+  > 문서나 데이터 구조를 표현하는 언어
+* 웹페이지를 만드는 언어
+  > 구조 예:  
+`<!DOCTYPE html>`  
+`<html>`  
+`   <head> `   
+`        <title>HTML test</title>`  
+`        <meta charset="utf-8">`
+    `</head>`
+    `<body>`
+        `<b>Hello html!</b>`
+    `</body>`
+`</html>`
+  >> head부분은 웹 상단 타이틀, body 부분에 내용
+* 태그에는 속성을 넣을 수 있다(속성과 속성 사이에는 한칸 띄운다)  
+   > `<img src="이미지파일이름.png" width="100" height="100">`
+* `<br>` : 엔터 역할을 한다
+* `id="id_name"` : 특정 태그에 이름을 붙일 때 사용
+  > `<img src="이미지파일이름.png" width="100" height="100" id="id_name">`
+* 필요한 태깅 및 기능은 필요할 때 찾기
+
+---
+## HTML 이해를 바탕으로 크롤링하기
+### 같은 태깅을 가지고 있을 때 하나만 가지고 오는 방법
+>`import requests from bs4 import BeautifulSoup`  
+`res = requests.get('https'://v.media.daum.net/v/~~)`  
+`soup = BeautifulSoup(res.content, 'html.parser')`  
+`mydata = soup.find('h3')` <- 수정 필요
+`mydata.get_text()`
+  > > 1. `mydata = soup.find('h3', class_ = cssstyle)` : 속성이 class이고 속성값이 cssstyle인 h3태깅을 가져온다.
+  > > 2. `mydata = soup.find('h3', attrs = {'align' : 'center'})` : 속성이 align이고 속성값이 center인 h3태깅을 가져온다
+  > > 3. `mydata = soup.find(id = 'body')` : 속성이 단 하나일 때 해당 문법도 가능
+
+### 조건을 만족하는 데이터 다 가져오기(find_all)
+`data = soup.find_all('p')` : 태깅이 p인 데이터를 모두 가져와서 리스트 형태로 저장
