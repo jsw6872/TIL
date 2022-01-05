@@ -1,23 +1,28 @@
 # GIT 기본 명령어
 ## 기본 터미널
-`pwd` :  현재 디렉토리의 위치 알려줌  
-`ls -al` : 현재 디렉토리의 파일을 알려줌
+```Bash 
+pwd #현재 디렉토리의 위치 알려줌  
 
+ls -al # 현재 디렉토리의 파일을 알려줌
+```
 
 ## init & vim 사용법 & cat & status & add
-`git init` : 현재 디렉토리에서 작업을 시작 
+```bash
+git init #현재 디렉토리에서 작업을 시작 
+ 
+vim  파일명.확장자명 # vim 에디터를 이용해서 파일을 생성 및 편집
+# * i : 편집 가능, esc : 나가는 것, : wq : 저장 후 quit  
 
-`vim`  파일명.확장자명 : vim 에디터를 이용해서 파일을 생성 및 편집
-* i : 편집 가능, esc : 나가는 것, : wq : 저장 후 quit  
+cat 파일명 # 파일 내용 확인
 
-`cat 파일명` : 파일 내용 확인
+git status # 파일의 상태를 알려준다
 
-`git status` : 파일의 상태를 알려준다
-
-`git add file_name` : 파일을 git 관리를 위해 추가
-- 초기의 git 버전관리 할당 시에도 사용하고 파일이 수정된 후 버전을 새로 commit하기 전에도 add를 통해 할당시켜줘야 함
-- add를 통해 stage에 commit 대기상태인 파일들이 있고 commit으로 버전 할당해주면 repository 에 올라가게 된다.
-- `git add -u` 수정되거나 삭제 등 update된 파일 모두 add
+git add file_name # 파일을 git 관리를 위해 추가
+```
+> `git add` 
+> *  초기의 git 버전관리 할당 시에도 사용하고 파일이 수정된 후 버전을 새로 commit하기 전에도 add를 통해 할당시켜줘야 함  
+> * add를 통해 stage에 commit 대기상태인 파일들이 있고 commit으로 버전 할당해주면 repository 에 올라가게 된다.  
+> `git add -u` 수정되거나 삭제 등 update된 파일 모두 add
 
 `git config --global user.name 이름`: 버전 이름을 설정해준다  
 `git config --global user.email 이메일` : 버전 메일을 설정해준다
