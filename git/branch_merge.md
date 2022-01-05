@@ -8,9 +8,7 @@
 * 여러 시나리오를 시도할 때
 
 ## brnach 관련 명령어
-```bash
-git branch
-``` : 현재 생성된 branch가 무엇이 있는지 확인 가능  
+`git branch` : 현재 생성된 branch가 무엇이 있는지 확인 가능  
 `git branch branch_name` : 해당 이름의 branch 생성  
 `git checkout branch_name` : 해당 branch로 변경
 * `git log`를 통해 해당 branch의 버전 확인 가능 
