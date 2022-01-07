@@ -80,3 +80,28 @@ for title in titles:
 
 driver.quit()
 ```
+## headless 옵션(브라우저창을 띄우지 않고 크롤링)
+```python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+path = '/Users/joseong-u/workspace/crawling실습/chromedriver' # Chromedriver 설치 경로
+headless_options = webdriver.ChromeOptions() # 옵션 설정
+headless_options.add_argument('headless') # headless 옵션 선택
+driver = webdriver.Chrome(path, options = headless_options)
+
+assert 'python' in driver.title # 웹 상단 타이틀에 Python 이 없으면 실행 중지
+
+searchbar = driver.find_element_by_name('q') # 검색창으로 이동
+
+#키 이벤트 전송
+searchbar.send_keys("python") # 검색창에 python 검색
+searchbar.send_keys(Keys.RETURN)
+#검색하는데 걸리는 로딩 시간을 기다리기 위해 코드를 2초 쉰다
+time.sleep(2)
+
+titles = driver.find_elements_by_tag_name('h3')
+# 타이틀 리스트들을 하나씩 출력
+for title in titles:
+    print(title.text())
+```
