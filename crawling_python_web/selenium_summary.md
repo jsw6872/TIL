@@ -1,33 +1,23 @@
 # selenium을 통한 크롤링
-```python
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+## selenium 관련 코드
 
-path = '/Users/joseong-u/workspace/crawling실습/chromedriver' # Chromedriver 설치 경로
-
-driver = webdriver.Chrome(path)
-
-driver.get('https://python.org') # url 받기
-print(driver.title) # 웹의 제목 출력
-```
-
-### `.find_element_by_name('q')` 
+### `driver.find_element_by_name('q')` 
 * 최초 발견한 name="q" 태그 기져옴
 
-### `.find_elements_by_name()`
+### `driver.find_elements_by_name()`
 * 최초 발견한 name 옵션  리스트 형태로 기져옴
 
-### `find_element_by_tag_name()`
+### `driver.find_element_by_tag_name()`
 * 태그 이름으로 검색
 
-### `find_elements_by_tag_name()`
+### `driver.find_elements_by_tag_name()`
 * 태그 검색한 결과 리스트로 반환
 
-### `find_element_by_id`
+### `driver.find_element_by_id`
 * id 옵션을 통해 검색
-### `find_element_by_css_selector`
+### `driver.find_element_by_css_selector`
 * 
-### `find_element_by_class_name`
+### `driver.find_element_by_class_name`
 * class 옵션으로 검색
 ### `.clear()`
 * input 텍스트 초기화
@@ -80,7 +70,7 @@ for title in titles:
 
 driver.quit()
 ```
-## headless 옵션(브라우저창을 띄우지 않고 크롤링)
+## headless 옵션을 사용해 크롤링 (브라우저창을 띄우지 않고 크롤링)
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -89,6 +79,8 @@ path = '/Users/joseong-u/workspace/crawling실습/chromedriver' # Chromedriver �
 headless_options = webdriver.ChromeOptions() # 옵션 설정
 headless_options.add_argument('headless') # headless 옵션 선택
 driver = webdriver.Chrome(path, options = headless_options)
+
+driver.get('https://python.org') 
 
 assert 'python' in driver.title # 웹 상단 타이틀에 Python 이 없으면 실행 중지
 

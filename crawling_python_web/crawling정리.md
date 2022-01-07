@@ -11,7 +11,7 @@ mydata = soup.find('h3')
 mydata.get_text()
 ```
 ### 필요 라이브러리 호출
-* requests : 웹페이지 가져오기 라이브러리
+* requests : 해당 url에 요청을 보내는 모듈
 * bs4(BeautifulSoup) : 웹페이지 분석(크롤링) 라이브러리
 ```python
 import requests 
