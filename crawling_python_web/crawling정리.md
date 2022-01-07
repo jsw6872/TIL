@@ -5,6 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 res = requests. get('https'://v.media.daum.net/v/~~)  
 soup = BeautifulSoup(res.content, 'html.parser')
+# 한글이 꺠질 시에 필요한 코드
+# BeautifulSoup(res.content.decode('euc-kr', 'replace'), 'html.parser')
 mydata = soup.find('h3')
 mydata.get_text()
 ```
