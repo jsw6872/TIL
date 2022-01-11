@@ -1,3 +1,11 @@
+# 여러 커밋을 하나로 합치기 (rebase)
+## rebase
+`git rebase HEAD~2` : 최근 2개의 커밋을 합친다
+## rebase의 옵션
+* s
+* p
+* ..
+
 # branch & merge
 
 ## branch
