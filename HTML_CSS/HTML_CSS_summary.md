@@ -15,6 +15,8 @@
 * `<html> </html>` : 사이에 모든 내용은 html(꼭 쓸 필요X)
 * `<a href="~~~">하이퍼링크</a>` : 해당 링크로 이동하는 내용 추가(내부 디렉토리 파일도 가능)
 * `<img src="~~~" width="300" heigt="200">` 이미지링크를 통해 가져옴, 가로 세로 조정 가능(%도 가능)
+* `<p class='color size'>`  : 클래스 2개 가능
+* `<input type="text" id="myInput" placeholder="type anything">` : placeholder의 내용을 갖고 있다
 
 # CSS
 ## 웹사이트의 스타일 담당
@@ -26,6 +28,7 @@
 * `margin-bottom,left,...: 20px` : 여백(padding : 4방향)
 * `text-decoration: underline, overline, linethrough, none` : 글자 줄 설정
 * `display: block, inline, inline-block` : 한줄, 딱 맞게, 길이 설정 가능
+* `cursor: pointer...` : 
 
 ### ex)  
 * 동일 태깅의 같은 스타일을 줄 때(h1)
@@ -68,6 +71,7 @@
 <p> 이 <i class="large-text">글자</i>는 글씨 크기가 64px이지만, 이 <i class="medium">글자</i>sms 글씨 크기가 32px이다</p>
 ```
 * id를 이용 (한 페이지의 중복 불가)
+
 ```css
 <style>
     #larget-text {
