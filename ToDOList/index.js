@@ -18,7 +18,7 @@ function addToDoList() { // 새로운 할 일 버튼 눌러서 추가
     newToDoList.innerHTML += `<span id="save"><input type="button" name="buttonmodify" value="수정" onclick="readOnlyFalse(this)"><input type="button" name="buttonsave" value="저장" onclick="readOnlyTrue(this)"></span>`;
     
     if (inputbox.value ===  '') {
-        alert('할 일을 입력해주세요!');
+        alert('할 일을 입력하세요')
     }   else {
             ToDoList.appendChild(newToDoList);
             inputbox.value = '';
@@ -34,11 +34,12 @@ function addToDoListByEnterBtn() {
 
     if (window.event.keyCode == 13) {
         if (inputbox.value === '') {
-            alert('할 일을 입력해주세요!');
-            return NaN
+            alert('할 일을 입력하세요')
+        } else{
+            ToDoList.appendChild(newToDoList);
+            inputbox.value = '';   
         }
-        ToDoList.appendChild(newToDoList);
-        inputbox.value = '';
+
     }
 }
 
