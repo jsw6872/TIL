@@ -43,18 +43,20 @@ function addToDoListByEnterBtn() {
     }
 }
 
-// 전체 선택/해제 했을 때 
-// function selectall
-
 // 체크된 친구 삭제
 function removeChecklist() {
     const checkbox = document.querySelectorAll('input[type=checkbox]'); // input
-    checkbox.forEach(element => {
-        if(element.checked == true){
-            element.parentElement.parentElement.remove();
+    for (i =0; i<checkbox.length; i++) {
+        if (checkbox[i].checked==true) {
+            checkbox[i].parentElement.parentElement.remove();
         }
-    });
-};
+    }
+    // checkbox.forEach(element => {
+    //     if(element.checked == true){
+    //         element.parentElement.parentElement.remove();
+    //     }
+    // })
+}
 
 function readOnlyFalse(e){
     e.parentNode.previousSibling.lastChild.readOnly=false;
@@ -65,7 +67,7 @@ function readOnlyTrue(e){
 }
 
 function checkAll() {
-    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    const checkboxes = document.getElementsByName('checkbox');
     if(checkboxes.checked == false){
         for(var i=0;i<checkboxes.length; i++){
             checkboxes[i].checked = false;
@@ -79,7 +81,7 @@ function checkAll() {
 }
 
 function uncheckAll() {
-    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    const checkboxes = document.getElementsByName('checkbox');
     if(checkboxes.checked == true){
         for(var i=0;i<checkboxes.length; i++){
             checkboxes[i].checked = true;
