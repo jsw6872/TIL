@@ -20,6 +20,16 @@ document.querySelector('.myNumber') // 가장 첫번째만
 document.querySelectorAll('.myNumber') // 모두 다
 document.getElemntsByClassName('.myNumber') // 위와 동일
 ```
+
+## querySelector vs getElementsById
+* querySelector는 NodeList로 반환
+* getElementsById는 HTMLcollection으로 반환
+
+## HTMLcollentio vs NodeList
+- HTMLcollentio는 forEach문을 사용하지 못 한다. Array.from을 통한 변경 필요, 동적 정보를 가지고 있다
+- NodeList는 forEach문을 사용가능하나 정적 정보를 가지고 있다.
+
+
 ## 이벤트와 버튼 클릭
 ```javascript
 const btn = document.querySelector('#myBtn');
@@ -27,6 +37,13 @@ btn.onclick = function () {
     console.log('Hello !'); // 버튼 누르면 Hello ! 출력
 };
 ```
+## DOM 트리 구조에서의 이동
+### Node와 Element의 차이
+* Node : 전체를 가리킨다 ex) `<a>  </a>`
+* Element: 텍스트 같은 것을 제외한 태깅만 가리킨다 ex) `<div> , <a>`
+
+  
+
 ## inner/outer HTML, textContext
 ```javascript
 const myTag = document.querySelector('#list-1');
@@ -96,4 +113,16 @@ $('#seoul').css('font-weight','bold')
 ////document.getElementById('seoul').style.fontweight = 'bold'와 동일
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+```
+## 이벤트 핸들러 및 핸들링
+```javascript
+$('home').on('click',clickhome); // addEventListener와 동일
+$(document).on('keydown', processKeyEvent); // 키 이벤트
+
+function clickHome() {
+      $('#photo').attr('src', 'images/home.png');
+      $('#home').css('font-weight', 'bold');
+
+function processKeyevent(event) {
+      clickHome(); // 홈 링크를 누르는 것과 똑같은 효과
 ```
