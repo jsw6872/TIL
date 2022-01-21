@@ -4,15 +4,13 @@ body{
     height: 100%;
 }
 div.appmanagerbar{
-    display: block;
-    float: left;
     width: 48px;
     height: 48px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 div.onedrivehome{
-    float: left;
     height: 48px;
     width: 70.234px;
     text-align: center;
@@ -20,24 +18,21 @@ div.onedrivehome{
     line-height: 48px; 
     /* 위 아래 중앙 맞추기 */
     color: white;
+    flex-shrink: 0;
 }
 div.searchbarsection {
-    float: left;
     width: 909.766px;
     height: 48px;
-}
-#searchbutton{
-    float: left;
-    height: 32px;
-    border: 5px;
-    padding: 5px;
-    margin-top: 8px;
-    width: 40px;
-    margin-left: 2.5in;
+    flex-shrink: 1;
+    /* flex-grow: 1; */
 }
 
+#searchbuttonimg{
+    height: 32px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
 input.searchbar {
-    float: left;
     width: 424px;
     height: 32px;
     padding: 0;
@@ -47,13 +42,55 @@ input.searchbar {
     outline: none;
 }
 div.righticons {
-    float: right;
+    display: flex;
     height: 48px;
     width: 192px;
+    align-self: flex-end;
 }
-span.icon {
-    float: right;
-    width: 48px;
+div.righticon{
     height: 48px;
+    width: 48px;
     text-align: center;
+}
+
+.main-header {
+    /* 오른쪽으로 붙이기 */
+    width: 82%;
+    height: 44px;
+    border-width: 0.5px;
+    border-left: none;
+    border-bottom: gray;
+    border-bottom-style: solid;
+}
+
+div.main-left{
+    float: left;
+}
+
+@media (max-width: 695px) {
+    button#searchbutton {
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+    img#searchbuttonimg{
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+    input.searchbar{
+        width: 0px;
+    }
+    div#searcgbargroup {
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 915px) {
+    input.searchbar{
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
 }
