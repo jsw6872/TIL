@@ -3,14 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel='stylesheet' href="./onedrive.css">
+        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
         <title>onedrive clone</title>
 	</head>
 
 	<body>
 		<header>
-            <div style="background-color: rgb(0, 120, 212); width:auto; height: 48px; display: flex;">
-                <div class="appmanagerbar">
-                    <img src="./appmanager.png" class="appmanagericon" style="margin-top: 10px;">
+            <div style="background-color: rgb(0, 120, 212); width:100%; height: 48px; display: flex;">
+                <div class="appmanagerbar header-btn" style="padding-top: 15px; height: 48px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+                        <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+                    </svg>
                 </div>
                 
                 <div class="onedrivehome">
@@ -19,49 +22,250 @@
                 
                 <div style="width: 80px; flex-shrink: 0;"></div>
                 
-                <div class="searchbarsection" style="display: flex; justify-content: center;">
-                    <!-- <div style="display: flex;" id="searcgbargroup"> -->
-                        <img src="./search.png" id="searchbuttonimg">
+                <div class="searchbarsection" style="display: flex; justify-content: center; background-color: g;">
+                        <span class="search-img">
+                            <i class="ms-Icon ms-font-l ms-Icon--Search ms-fontColor-themePrimary" id="search-img"></i>
+                        </span>
                         <input placeholder="모두 검색" class="searchbar">
-                    <!-- </div> -->
                 </div>
 
                 <div style="width: 50px; flex-shrink: 0;"></div>
 
                 <div class="righticons">
-                    <div class="righticon"><img src="./dia.png" style="margin-top: 8px;"></div>
-                    <div class="righticon"><img src="./option.png " style="margin-top: 7px;"></div>
-                    <div class="righticon"><img src="./help.png" style="margin-top: 9px;"></div>
-                    <div class="righticon"><img src="./profile.png"></div>
-                </div>
+                    <div class="righticon header-btn" id="right-0"><i class="ms-Icon ms-font-l ms-Icon--Search" style="line-height: 48px; color: white;"></i></div>
+                    <div class="righticon header-btn" id="right-1"><i class="ms-Icon ms-font-l ms-Icon--DiamondSolid" style="line-height: 48px; color: white;"></i></div>
+                    <div class="righticon header-btn" id="right-2"><i class="ms-Icon ms-font-l ms-Icon--Settings" style="line-height: 48px; color: white;"></i></div>
+                    <div class="righticon header-btn" id="right-3"><i class="ms-Icon ms-font-xxl ms-Icon--StatusCircleQuestionMark" style="line-height: 48px; color: white;"></i></div>
+                    <div class="righticon header-btn" id="right-4"><i class="ms-Icon ms-font-l ms-Icon--ProfileSearch" style="line-height: 48px; color: white;"></i></div>
             </div>
 		</header>
 
-		<section class="main">
-			<div class="main-header" style="height: 44px;">
-				<!-- TODO: 메인의 헤더 부분 -->
-                <div>
-                    asd
+
+		<div class="main">
+            <div class="main-detail">
+				<div class="main-left">	
+                    <div style="width: 228px; height: 44px;">
+                        <span style="line-height: 44px; margin-left: 16px; font-size: 14px; color: rgb(65, 65, 65);">
+                            <b>조 성우</b>
+                        </span>
+                    </div>
+
+                    <div class="left-menus" id="left-1">
+                        <span>
+                            <i class="ms-Icon ms-font-l ms-Icon--FolderHorizontal" style="margin-top: 8px;"></i>
+                        </span>
+                        <span class="left-menu-text">내 파일</span>
+                    </div>
+
+                    <div class="left-menus" id="left-2">
+                        <span>
+                            <i class="ms-Icon ms-font-l ms-Icon--Recent" style="margin-top: 8px;"></i>
+                        </span>
+                        <span class="left-menu-text">최근 항목</span>
+                    </div>
+
+                    <div class="left-menus" id="left-3">
+                        <span>
+                            <i class="ms-Icon ms-font-l ms-Icon--Photo2" style="margin-top: 8px;"></i>
+                        </span>
+                        <span class="left-menu-text">사진</span>
+                    </div>
+
+                    <div class="left-menus" id="left-4">
+                        <span>
+                            <i class="ms-Icon ms-font-l ms-Icon--People" style="margin-top: 8px;"></i>
+                        </span>
+                        <span class="left-menu-text">공유됨</span>
+                    </div>
+
+                    <div class="left-menus" id="left-5">
+                        <span>
+                            <i class="ms-Icon ms-font-l ms-Icon--RecycleBin" style="margin-top: 8px;"></i>
+                        </span>
+                        <span class="left-menu-text">휴지통</span>
+                    </div>
+
+                    <div style="height: 217px; font-size: 12px; margin-top: auto; border-top-color: gainsboro; border-top-style: solid; border-width: 1px;">
+                        <div style="margin-top: 16px; margin-left: 16px; margin-right: 16px; margin-bottom: 16px; color: rgb(143, 143, 143);">
+                            1TB(10000GB)의 저장소와 최신 PC 또는 Mac용 Office 앱을 받을 수 있습니다.
+                        </div>
+                            <img src="upgrade.png" style="width: 194px; height: 30; margin-left: 17px;">
+                    </div>
                 </div>
 			</div>
 
-			<section class="main-detail" style="height: 100%; ">
-				<div class="main-left">
-					<!-- TODO: 메인의 왼쪽 부분 -->		
-                    <div style="width: 225px; height: 900px; background-color: gainsboro; float: left;">
-                        aqwer
-                    </div>		
+
+
+
+            <div class="main-page">
+                <div class="main-header">
+                    <div class="header-left-buttons" style="flex-shrink: 1;">
+                        <button class="header-button" id="head-btn-1" type="button" title="이 위치에 새 폴더 또는 문서를 만듭니다.">
+                            <span style="font-size: 25px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px;"><i class="ms-Icon ms-font-xl ms-Icon--Add"></i></span>
+                            <span class="header-button-text">새로 만들기</span>
+                            <span class="header-button-text"><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                        </button>
+                    
+                        <button class="header-button" id="head-btn-2" type="button" title="컴퓨터에 파일을 이 위치에 업로드합니다.">
+                            <span style="font-size: 25px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px;"><i class="ms-Icon ms-font-l ms-Icon--Upload"></i></span>
+                            <span class="header-button-text">업로드</span>
+                            <span class="header-button-text"><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                        </button>
+
+                        <button class="header-button" id="head-btn-3" type="button" title="파일을 삭제합니다.">
+                            <span style="font-size: 25px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px;"><i class="ms-Icon ms-font-l ms-Icon--Delete"></i></span>
+                            <span class="header-button-text">삭제</span>
+                            <span class="header-button-text"><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                        </button>
+
+
+                    </div>
+
+                    <div class="header-right-buttons">
+                        <button class="header-button" type="button" title="정렬">
+                            <span style="font-size: 20px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px;"><i class="ms-Icon ms-font-l ms-Icon--SortLines"></i></span>
+                            <span class="header-button-text">정렬</span>
+                            <span class="header-button-text"><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                        </button>
+
+                        <button class="header-button" type="button" title="보기 옵션 메뉴를 엽니다.">
+                            <span style="font-size: 25px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px; margin-bottom: 5px;">
+                                <i class="ms-Icon ms-font-l ms-Icon--AlignLeft"></i>
+                            </span>
+                            <span class="header-button-text"><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                        </button>
+
+                        <button class="header-button" type="button" title="세부 정보 창 열기">
+                            <span style="font-size: 20px; color: rgb(55, 135, 255); margin-left: 4px; margin-right: 4px;"><i class="ms-Icon ms-font-xl ms-Icon--Info"></i></span>
+                        </button>
+                    </div>
                 </div>
 
-				<aside>
-					<!-- TODO: 메인의 오른쪽 메뉴 부분 -->
-				</aside>
-			</section>
-		</section>
+                <div class="main-contents-section">
+                    <div>
+                        <div class="main-contents-header">
+                            내 파일
+                        </div>
 
-		<footer>
+                        <div class="main-contents">
+                            <div class="main-contents-bar">
+                                <div class="input-check-button">
+                                    <!-- div에 마우스 올리면 체크박스 보이기  -->
+                                    <input type="checkbox" class="all-checkbox" id="allcheck" >
+                                </div>
+
+                                <div class="main-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                                        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                                      </svg>
+                                </div>
+
+                                <div class="main-name">
+                                    <span>이름</span>
+                                    <span><i class="ms-Icon ms-font-m ms-Icon--SortUp"></i></span>
+                                    <span><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                                </div>
+
+                                <div class="main-date">
+                                    <span>수정한 날짜</span>
+                                    <span><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                                </div>
+
+                                <div class="main-size">
+                                    <span>크기</span>
+                                    <span><i class="ms-Icon ms-font-s ms-Icon--ChevronDownSmall"></i></span>
+                                </div>
+
+                            </div>
+
+                            <div class="main-contents-list">
+                                <div class="input-check-button">
+                                    <input type="checkbox" class="checkbox">
+                                </div>
+                                <div class="main-icons">
+                                    <i class="ms-Icon ms-font-l ms-Icon--Combobox"></i>
+                                </div>
+
+                                <div class="main-name">
+                                    개인 중요 보관소
+                                </div>
+
+                                <div class="main-date">
+                                    <span></span>
+                                </div>
+
+                                <div class="main-size">
+                                    <span style="font-size: 13px;">0</span>
+                                </div>
+
+                            </div>
+
+                            <div class="main-contents-list">
+                                <div class="input-check-button">
+                                    <!-- div에 마우스 올리면 체크박스 보이기  -->
+                                    <input type="checkbox" class="checkbox">
+                                </div>
+                                
+                                <div class="main-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  fill="rgb(255,185,0)" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                        <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                                      </svg>
+                                </div>
+
+                                <div class="main-name">
+                                    문서
+                                </div>
+
+
+                                <div class="main-date">
+                                    <span class="main-date-font" style="font-size: 13px;">2022년 01월 23일</span>
+                                </div>
+
+                                <div class="main-size">
+                                    <span style="font-size: 13px;">10</span>
+                                </div>
+
+                            </div>
+
+                            <div class="main-contents-list">
+                                <div class="input-check-button">
+                                    <!-- div에 마우스 올리면 체크박스 보이기  -->
+                                    <input type="checkbox" class="checkbox" checke= false;>
+                                </div>
+                                <div class="main-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  fill="rgb(255,185,0)" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                        <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                                      </svg>
+                                </div>
+
+                                <div class="main-name">
+                                    사진
+                                </div>
+
+                                <div class="main-date">
+                                    <span class="main-date-font" style="font-size: 13px;">2022년 01월 24일</span>
+                                </div>
+
+                                <div class="main-size">
+                                    <span style="font-size: 13px;">30</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="file-drag-message">
+                            파일을 업로드하려면 여기로 끌어오세요.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		</div>
+
+		<!-- <footer> -->
 			<!-- TODO: 하단의 Copyright, Terms, Privacy 등은 어떻게 처리하면 좋을까요? -->
-		</footer>
-        <script> src="./onedrive.js"</script>
-	</body>
+		<!-- </footer> -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="./onedrive.js"> </script>
+    </body>
 </html>
