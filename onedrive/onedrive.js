@@ -8,6 +8,7 @@ $("span[class='search-img'],input[class='searchbar']").mouseout(function () {
     $('input.searchbar').css('backgroundColor', '');
 });
 
+// 새로 만들기
 $('#head-btn-1').click(function() { 
     $('.main-contents').append(`<div class="main-contents-list">
     <div class="input-check-button">
@@ -72,25 +73,34 @@ $("#allcheck").click(function(){
 // });
 
 
-// 하나씩 체크
+// 하나씩 체크(새로 생성된 파일은 아예 작동을 안 함)
 $('.checkbox').click(function(){
-    if($(this).is(':checked')){
-        var main_list = $(this).parent().parent();        
-        $(this).attr('checked', true);
+    if($(this).prop('checked')==true){
+        console.log('cc');
+        var main_list = $(this).parent().parent();
         main_list.css('backgroundColor', '#e1dfdd');
     } else{
-        $('.checkbox').attr('checked', false);
-        console.log('u',$(this).attr("checked"));
+        console.log('uu');
         var main_list = $(this).parent().parent();
         main_list.css('backgroundColor', '');
     }
 });
 
 // 삭제
-$('#head-btn-3').click(function () {
-    if($('.checkbox').is(':checked')){
-        var remove_list = $('.checkbox').parent().parent().remove();
-        remove_list.remove()
-    }
+$("#head-btn-3").click(function(){
+    $(".checkbox").each(function(){
+        if ($(this).is(":checked")) {
+            $(this).parent().parent().remove()
+        }
+    })
 });
 
+//창 줄었을 때 검색창 생성(뜨기는 뜨지만 미완성)
+$('#right-0').click(function(){
+    console.log('push');
+    $('.searchbarsection').css('width', '600px');
+    $('.searchbarsection').css('float', 'left');
+    $('.searchbarsection').css('margin-left', '30px');
+    $('.searchbar').css('margin-left', '30px');
+    $('.searchbar').css('width', '550px');
+});
