@@ -71,6 +71,33 @@ var fs = require('fs');
 // url 모듈을 사용해 값 가져와서 url에 할당
 var url = require('url'); 
 
+function templateHTML(title, list, body){
+  return `
+  <!doctype html>
+  <html>
+  <head>
+    <title>WEB1 - ${title}</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1><a href="/">WEB</a></h1>
+    ${list}
+    ${body}
+  </body>
+  </html>
+  `;
+}
+function templateList(filelist){
+  var list = `<ul>`;
+  var i = 0;
+  while(i<filelist.length){
+    list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
+    i++;
+  }
+  list = list + `</ul>`;
+  return list;
+}
+
 var app = http.createServer(function(request, response){
     var _url = request.url; //????????
     var queryData = url.parse(_url, true).query; // 해당 _url에 query 정보 
@@ -83,63 +110,23 @@ var app = http.createServer(function(request, response){
         console.log(filelist);
         var title = 'Home';
         var description = 'Hello, world !';
-        var list = `<ul>`;
-        var i = 0;
-        while(i<filelist.length){
-          list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
-          i++;
-        }
-        list = list + `</ul>`;
-
-        var template = `
-        <!doctype html>
-        <html>
-        <head>
-          <title>WEB1 - ${title}</title>
-          <meta charset="utf-8">
-        </head>
-        <body>
-          <h1><a href="/">WEB</a></h1>
-          ${list}
-          <h2>${title}</h2>
-          <p>${description}</p>
-        </body>
-        </html>
-            `;
+        var list = templateHTML(filelist);
+        var template = templateHTML(title, list, `<h2>${title}</h2><p>${description}</p>`);
+      
         response.writeHead(200);
         response.end(template); //해당 내용을 웹에서 실행
         })
     } else { // 다른 부분을 눌렀을 때
         fs.readdir('./', function(err, filelist){
           console.log(filelist);
-          var list = `<ul>`;
-          var i = 0;
-          while(i<filelist.length){
-            list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
-            i++;
-          }
-          list = list + `</ul>`;
-        // queryData.id에 해당하는 파일 내용을 읽는다(/?id='~') ~에 해당하는 부분
-        fs.readFile(`./${queryData.id}`,"utf-8", function(err,description){
-          var title = queryData.id;
-          var template = `
-          <!doctype html>
-          <html>
-          <head>
-            <title>WEB1 - ${title}</title>
-            <meta charset="utf-8">
-          </head>
-          <body>
-            <h1><a href="/">WEB</a></h1>
-              ${list}
-            <h2>${title}</h2>
-            <p>${description}</p>
-          </body>
-          </html>
-              `;
-          response.writeHead(200);
-          response.end(template);
-          });
+          // queryData.id에 해당하는 파일 내용을 읽는다(/?id='~') ~에 해당하는 부분
+          fs.readFile(`./${queryData.id}`,"utf-8", function(err,description){
+            var title = queryData.id;
+            var list = templateList(filelist);
+            var template = templateHTML(title, list, `<h2>${title}</h2><p>${description}</p>`);
+            response.writeHead(200);
+            response.end(template);
+            });
         });
       }
     } else { // 비정상적인 루트
