@@ -136,3 +136,59 @@ var app = http.createServer(function(request, response){
 });
 app.listen(3000);
 ```
+
+## 동기 & 비동기적 실행
+* 동기는 코드 순서대로 실행
+* 비동기 코드
+```javascript
+var fs = require('fs');
+console.log(1);
+fs.readFile('./2.txt', 'utf-8', function(err,result){
+  //err은 파일 에러날 때, result는 파일의 내용
+  console.log(result);
+});
+console.log(3);
+```
+> 1,3,2
+
+## callback
+```javascript
+var a = function(){
+  console.log('a');
+}
+function slowfunc(callback){
+  callback();
+}
+
+slowfunc(a);
+```
+
+## form 태그
+```html
+<!-- action 주소에 각 input의 name과 값으로 querystring을 생성  -->
+<!-- post로 할 시 url상에 정보가 숨겨잔다(서버 데이터를 수정이나 삭제할 때 사용) -->
+<form action="http://~~" method="post">
+  <p><input type="text" name="title"></p>
+  <p><textarea name="description"></textarea></p>
+  <p><input type="submit"></p>
+</form>
+```
+
+## post로 전송된 데이터 가져오기
+```javascript
+if(pathname==='/create_process'){ // submit 한 url이 조건일 때
+        var body =``;
+        request.on('data', function(data){// post방식으로 많은 데이터를 전달할 때 data라는 인자로부터 콜백 함수 호출
+            body += data;
+        });
+        request.on('end', function(){ // 정보 수신이 끝났을 때
+            var post = qs.parse(body); //post에는 post로 전송한 name,데이터가 array로 담겨있다
+            var title = post.title; 
+            var description = post.description;
+        });
+    response.writeHead(200);
+    response.end('success');
+    }
+```
+## create를 통한 파일 생성, update를 통한 파일 수정, delete(form)을 이용한 파일 삭제
+## 입출력정보에 관련된 보안
