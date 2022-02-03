@@ -132,6 +132,7 @@ new Vue({
         }
     });
 ```
+# 컴포넌트 통신
 ## eventemit으로 콘솔 출력하기
 ```html
 <div id="app">
@@ -237,7 +238,7 @@ new Vue({
     }
 })
 ```
-
+# 라우터
 ## 뷰라우터
 ```html
 <div id="app">
@@ -256,6 +257,7 @@ var MainComponent = {
 }
 
 var router = new VueRouter({
+    mode : 'history', // #을 없앤다
     // 페이지의 라우팅 정보(url 이동 시 어떤 페이지를 뿌릴지에 대한 정보) 배열로 표현
     routes : [
         // 로그인 페이지 정보
@@ -278,3 +280,115 @@ new Vue({
     router: router
 });
 ```
+## 라우터 링크를 이용한 페이지 이동
+```html
+<div id="app">
+    <div>
+        <router-link to="/login">Login</router-link>
+        <router-link to="/main">Main</router-link>
+    </div>
+    <router-view></router-view>
+</div>
+```
+
+# HTTP 통신 라이브러리
+## axios : 뷰에서 권고하는 HTTP 통신 라이브러리(코드 참고)
+
+# computed 속성
+* data에서 선언한 값을 이용
+```javascript
+new Vue({
+    el: '#app',
+    data: {
+        num:10,
+    },
+    computed: {
+        doubleNum: function(){
+            return this.num * 2;
+        }
+    }
+})
+```
+# this 바인딩
+* reference
+[this 바인딩](https://joshua1988.github.io/web-development/javascript/javascript-basic-summary/#this-%EB%B0%94%EC%9D%B8%EB%94%A9)
+
+# v-디렉티브
+## v-bind
+* id나 class를 관리
+```html
+<div id='app'>
+    <p v-bind:id='uuid' v-bind:class='name'>asdasf</p>
+    <!-- <p id='abc1234'>asdasf</p> -->
+</div>
+```
+```javascript
+new Vue({
+    el: '#app',
+    data: {
+        uuid: 'abc1234'
+        name: 'text-blue'
+    }
+})
+```
+## v-if, v-else
+
+
+## v-show
+* dom의 정보는 남아 있으나 false 일 때 화면에선 안 보임
+
+## v-on
+### v-on:click, v-on:keypress
+```html
+<div id="id">
+    <button v-on:click>click me</button>
+    <!-- 엔터 쳤을 때 이벤트 발생 -->
+    <input type="text" v-on:keyup.enter='logText'>
+</div>
+```
+```javascript
+new Vue({
+    el: '#app',
+    methods: {
+        logText: function(){
+            console.log('clicked');
+        }
+    }
+})
+```
+## v-model
+* data에 선언된 요소들의 입력값이 자동으로 데이터 속성에 연결
+
+# watch 속성
+* data에 변화에 따라서 특정 로직을 실행시킬 수 있다.
+```html
+<div id="id">
+    <button v-on:click="addNum">increase</button>
+</div>
+```
+```javascript
+new Vue({
+    el: '#app',
+    data:{
+        num:10
+    },
+    watch:{
+        num: function(){
+            this.logText();
+        }
+    },
+    methods: {
+        addNum: function () {
+            this.num=this.num+1
+        },
+        logText: function(){
+            console.log('changed');
+        }
+    }
+})
+```
+## computed vs watch
+* computed로 구현이 가능하다면 되도록 computed 사용
+* computed는 간단한 연산 종속적 관계는 watch 사용
+
+# Vue CLI
