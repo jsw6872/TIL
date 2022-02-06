@@ -2,6 +2,10 @@
 ## 기본 세팅 (기존 node.js 어떻게 다른지 비교)
 - 터미널에서 `npm init`
 - `npm install express`
+- `npm install`을 통해 npm 설치
+## front, backend 연동
+### refernce  
+[vue express 연동](https://mrw0119.tistory.com/136)
 ```javascript
 const express = require('express')
 var fs = require('fs')
