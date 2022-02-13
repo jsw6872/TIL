@@ -13,7 +13,6 @@ const app = express()
 const port = 3000
 var template = require(`./lib/template.js`)
 
-
 // app.get('url주소', function(req, res)
 app.get('/', function(req, res){
     fs.readdir('./data', function(error, filelist){
@@ -45,3 +44,4 @@ app.get('/page/:pageId', function(request, response){
     response.send(request.params);
 });
 ```
+
