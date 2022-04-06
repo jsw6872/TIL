@@ -1,10 +1,11 @@
 # Node.js Mysql & Sequelize
 ## Squelize
 ### 설치 및 초기화
-`npm install`  
+`express name --view=ejs`
+`npm install`
 `npm install mysql2`  
 `npm install sequelize`  
-`npm install sequelize-cli`  
+`npm install -g sequelize-cli`
 `sequelize init`  
 ### ORM 
 - 객체 및 관계형 데이터베이스의 데이터를 자동으로 매핑해주는 것
