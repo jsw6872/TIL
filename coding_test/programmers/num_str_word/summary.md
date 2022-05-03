@@ -6,7 +6,8 @@
 * "one4seveneight" → 1478  
 * "23four5six7" → 234567  
 * "1zerotwozero3" → 10203
-
+## 걸린시간
+5분
 
 ## 나의 풀이
 ```python

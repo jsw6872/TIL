@@ -7,7 +7,8 @@ s는 길이가 1 이상, 100이하인 스트링입니다.
 
 - "abcdef" -> "cd"
 - "abcde" -> "c"
-
+## 걸린시간
+8분
 ## 나의 풀이
 ```python
 def solution(s):
