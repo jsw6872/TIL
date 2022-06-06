@@ -22,7 +22,7 @@ def solution(price, money, count):
     return (answer - money)
 ```
 
-## 다른 풀이
+## 다른 풀이 (절대값 및 최소값 이용)
 ```python 
 def solution(price, money, count):
     return abs(min(money - sum([price*i for i in range(1,count+1)]),0))
