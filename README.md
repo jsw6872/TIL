@@ -36,7 +36,7 @@
 * [ref - front, back, mysql 연결](https://marshmello.tistory.com/65?category=1158454)
 
 ### ML
-- [move to ML repository](https://github.com/jsw6872/DataScience-ML))
+- [move to ML repository](https://github.com/jsw6872/DataScience-ML)
 
 ### coding test
 - [baekjoon](https://github.com/jsw6872/TIL/blob/main/coding_test/baekjoon)
