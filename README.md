@@ -35,6 +35,9 @@
 * * [ref - front, back, mysql 연결(2)](https://medium.com/hivelab-dev/vue-express-mysql-part2-6d8fc0e497de)
 * [ref - front, back, mysql 연결](https://marshmello.tistory.com/65?category=1158454)
 
+### ML
+- [move to ML repository](https://github.com/jsw6872/DataScience-ML))
+
 ### coding test
 - [baekjoon](https://github.com/jsw6872/TIL/blob/main/coding_test/baekjoon)
 - [programmers](https://github.com/jsw6872/TIL/blob/main/coding_test/programmers)
