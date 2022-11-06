@@ -1,16 +1,18 @@
-def solution(denum1, num1, denum2, num2):
-    top_num = denum1*num2 + num1*denum2
-    bottom_num = num1 * num2
+from collections import Counter
+
+def solution(array):
+    count_dict = Counter(array)
+
+    max_num = max(count_dict.values())
     
-    if bottom_num == top_num:
-        return [1, 1]
+    count = 0
+    r_key = None
     
-    if top_num % bottom_num == 0:
-        return [top_num // bottom_num, 1]
-    
-    maxnum = 1
-    for num in range(maxnum, bottom_num):
-        if bottom_num % num == 0 and top_num % num == 0:
-            maxnum = num 
-    
-    return [top_num // maxnum, bottom_num // maxnum]
+    for key in count_dict:
+        if count_dict[key] == max_num:
+            count += 1
+            r_key = key
+    if count == 1:
+        return r_key
+    else:
+        return -1
